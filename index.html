@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Tables</title>
+</head>
+<body>
+    <script>
+        function printMultiplicationTables(startingNumber) {
+            var table = "";
+            for (var i = startingNumber; i <= 20; i++) {
+                for (var j = 1; j <= 10; j++) {
+                    table += i + " x " + j + " = " + (i * j) + "<br>\n";
+                }
+                table += "<br>\n"; // Add a newline to separate each table
+            }
+            document.write("Multiplication Tables from " + startingNumber + "\n to 20:\n" + table);
+        }
+
+        var userInput = parseInt(prompt("Enter a number (2 to 20):"));
+
+        if (isNaN(userInput) || userInput < 2 || userInput > 20) {
+            alert("Invalid input. Please enter a number between 2 and 20.");
+        } else {
+            printMultiplicationTables(userInput);
+        }
+    </script>
+</body>
+</html>
